@@ -1,0 +1,110 @@
+:root{
+    --primary:#4d4c4c;
+    --bg:#2d2d2d;
+}
+.navbar{
+    align-items: center;
+    background-color:var(--bg)
+}
+.navbar>div:nth-child(2){
+    width: 130px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar>div:nth-child(3){
+    width: 130px;
+    height:76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar>div:nth-child(3):hover{
+    background-color: var(--primary);
+    cursor: pointer;
+}
+.navbar>div:nth-child(2):hover{
+    background-color: var(--primary);
+    cursor: pointer;
+}
+.navbar img{
+    /* margin-left: 30px; */
+    filter: invert(100%);
+    margin-right: 20px;
+}
+.input>div{
+    width:800px;
+    margin-left: 40px;
+}
+.icons div{
+    cursor: pointer;
+}
+.hamburger>div{
+    display: none;
+}
+
+
+@media only screen and (max-width: 1500px)  {
+    .input>div{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
+    
+}
+@media only screen and (max-width: 920px)  {
+    .input>div{
+        display: none;
+    }
+    .inputfiled{
+        display: none;
+    }
+    .navbar>div:nth-child(2){
+        display: none;
+    }
+    .navbar>div:nth-child(3){
+        display: none;
+    }
+    .navbar{
+        height: 100px;
+    }.hamburger>div{
+        display: block;
+        color: white;
+        font-size: 50px;
+        margin-right: 100px;
+    }.navbar img{
+        filter: invert(100%);
+    }
+}
+@media only screen and (max-width: 400px)  {
+    .input>div{
+        display: none;
+    }
+    .inputfiled{
+        display: none;
+    }
+    .navbar>div:nth-child(2){
+        display: none;
+    }
+    .navbar>div:nth-child(3){
+        display: none;
+    }
+   .hamburger>div{
+        display: block;
+        color: white;
+        font-size: 50px;
+        margin-right: 100px;
+    }
+    .icons div:nth-child(2){
+        cursor: pointer;
+        display: none;
+    } 
+    .icons div:nth-child(3){
+        cursor: pointer;
+        display: none;
+    }.navbar{
+        height: 100px;
+    }
+}
