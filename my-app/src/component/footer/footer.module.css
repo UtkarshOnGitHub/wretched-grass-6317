@@ -1,0 +1,53 @@
+.Socicon{
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+}
+.list{
+  margin-top: -68px;
+  background-color: #eeeeee;
+  padding: 30px 20px;
+}
+.list li{
+    list-style: none;
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 50px;
+}
+.list li:hover{
+    color: red;
+    cursor: pointer;
+}
+.list p{
+    text-align: left;
+    margin-left: 50px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px){
+    .Socicon{
+        display: none;
+    }
+    .div1{
+        display: none;
+    }.list{
+        margin-top: 50px;
+    }
+} 

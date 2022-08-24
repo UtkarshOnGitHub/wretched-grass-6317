@@ -1,0 +1,46 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.container img{
+    margin-top: 0px;
+}
+.comp{
+    margin: auto;
+    padding: 50px;
+    background-image: url("https://content.asos-media.com/-/media/homepages/unisex/events-2022/wk52-red-pen/gradient-banners/use-these/ww-desktop-banner.jpg");
+}
+.text{
+    /* width: 700px; */
+    text-align: center;
+    /* margin-left: 29%; */
+    margin-top: 20px;
+    font-style: italic;
+}
+.text p{
+    line-height: 50px;
+}
+.pic{
+    height: 600px;
+}
+.pic img{
+    width: 85%;
+    margin: auto;
+    margin-top: 50px;
+    height: 100%;
+}
+
+@media only screen and (max-width: 512px) {
+    .off{
+        display: none;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .off{
+        display: none;
+    }
+    .off2{
+        font: 14px;
+    }
+}
