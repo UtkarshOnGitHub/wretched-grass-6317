@@ -9,7 +9,7 @@ import Loading from '../../component/productsDisplay/loading'
 import Pagination from '../../component/productsDisplay/pagination'
 import ProductsDisplay from '../../component/productsDisplay/ProductsDisplay'
 
-const Men = () => {
+const Men = () => { 
     const [products , setProducts] = useState([])
 
     const [page, setPage] = useState(1);
