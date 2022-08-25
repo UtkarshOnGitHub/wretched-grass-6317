@@ -10,6 +10,15 @@ export const getWomenProducts=(params={})=>{
     })
 }
 
+export const getMenProducts=(params={})=>{
+    return axios.get(`http://localhost:5000/men_products`,{
+        params:{
+            _limit:params.limit,
+            _page:params.page
+        }
+    })
+}
+
 
 export const getListProducts=(params={})=>{
     return axios.get(`http://localhost:5000/products`,{

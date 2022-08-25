@@ -29,7 +29,9 @@ const MiddleComp = () => {
       setState(pics[i])
     },3000)
   },[])
-
+  
+   
+  
     
   return (
     <div>

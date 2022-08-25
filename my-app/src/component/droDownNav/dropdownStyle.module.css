@@ -29,7 +29,7 @@
     left: 0px;
 
 }
-.hov:hover .boxDiv{transition: 0.2s;}
+.hov:hover .boxDiv{transition: 0.4s;}
 .hov:hover .boxDiv{display: block;}
 
 .boxDiv ul li{
@@ -40,7 +40,7 @@
 }
 .boxDiv ul li:hover{
     border-bottom:1px solid rgb(52, 51, 51);
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .list{
@@ -54,7 +54,7 @@
     width: 200px;
 
 }
-.hov:hover .list{transition: 0.2s;}
+.hov:hover .list{transition: 0.4s;}
 .hov:hover .list{display: block;}
 
 .list ul li{
