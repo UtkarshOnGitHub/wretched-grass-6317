@@ -4,8 +4,16 @@ import Section from '../../component/Section/section'
 import MiddleComp from '../../component/middleSection/MiddleComp'
 import Navbar from '../../component/navbar/Navbar'
 import Footer from '../../component/footer/footer'
+import { useEffect } from 'react'
+
+
+
+
+
+
 
 const Home = () => {
+
   return (
     <div>
       <Navbar/>
@@ -18,3 +26,5 @@ const Home = () => {
 }
 
 export default Home
+
+

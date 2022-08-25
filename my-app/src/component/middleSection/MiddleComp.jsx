@@ -26,7 +26,6 @@ const MiddleComp = () => {
           i--; 
         }
       }
-      console.log(i)
       setState(pics[i])
     },3000)
   },[])

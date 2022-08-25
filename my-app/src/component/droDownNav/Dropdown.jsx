@@ -1,5 +1,6 @@
 import { Text, Flex , Box, Container , Center, Img, Spacer, Button } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom';
 import dropdownStyle from "./dropdownStyle.module.css";
 
 const saledata =[
@@ -68,7 +69,7 @@ const Dropdown = () => {
                             {saledata.map((e)=>{
                                 return(
                                     
-                                    <li><Button h="28px">Shop</Button></li>
+                                    <Link to="/category"><li><Button h="28px">Shop</Button></li></Link>
                                 )
                             })}
                         </ul>
@@ -103,7 +104,7 @@ const Dropdown = () => {
                             {saledata.map((e)=>{
                                 return(
                                     
-                                    <li><Button h="28px">Shop</Button></li>
+                                    <Link to="/category"><li><Button h="28px">Shop</Button></li></Link>
                                 )
                             })}
                         </ul>
@@ -127,7 +128,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">In Clothing</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>{e.title}</li>
+                                <Link to="/category"> <li>{e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -142,7 +143,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">In Dresses</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>{e.title}</li>
+                                <Link to="/category"> <li>{e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -158,7 +159,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">In Shoes</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>{e.title}</li>
+                                <Link to="/category"> <li>{e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -190,7 +191,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">Accessiories</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>Access {e.title}</li>
+                                <Link to="/category"><li>Access {e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -205,7 +206,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">In Summer</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>Summer {e.title}</li>
+                                <Link to="/category"><li>Summer {e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -220,7 +221,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">In Trending</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>Trending {e.title}</li>
+                                <Link to="/category"><li>Trending {e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -235,7 +236,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">SportsWear</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>Sports {e.title}</li>
+                                <Link to="/category"> <li>Sports {e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -250,7 +251,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">Face Body</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>Cos {e.title}</li>
+                                <Link to="/category">   <li>Cos {e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -267,7 +268,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">Outlet</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>Outlet {e.title}</li>
+                                <Link to="/category"> <li>Outlet {e.title}</li></Link>
                             )
                         })}
                     </ul>
@@ -282,7 +283,7 @@ const Dropdown = () => {
                         <Text fontSize="3xl">Market</Text>
                         {saledata.map((e)=>{
                             return(
-                                <li>Market {e.title}</li>
+                                <Link to="/category">  <li>Market {e.title}</li></Link>
                             )
                         })}
                     </ul>

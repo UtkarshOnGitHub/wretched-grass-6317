@@ -42,5 +42,8 @@
     }
     .off2{
         font: 14px;
+    }.pic img{
+        margin-top: 100px;
+        height: 80%;
     }
 }
