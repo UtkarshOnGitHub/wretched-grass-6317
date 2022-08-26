@@ -1,9 +1,7 @@
 import { Badge, Box, Image, Img, SimpleGrid, Text } from '@chakra-ui/react'
 import React from 'react'
 import { BsStar } from 'react-icons/bs'
-import Dropdown from '../droDownNav/Dropdown'
-import Navbar from '../navbar/Navbar'
-import Pagination from './pagination'
+import { FiHeart } from 'react-icons/fi'
 
 const ProductsDisplay = ({data}) => {
     console.log(data)
@@ -33,6 +31,9 @@ const ProductsDisplay = ({data}) => {
                         </Box>
                         <Box position="relative" top="-517" right="165" >
                                 <Text as="em" color="red">{e.discount} Off</Text>
+                        </Box>
+                        <Box position="relative" top="-106" right="-320px" >
+                               <FiHeart fontSize="20px"/>
                         </Box>
                 
                         <Box

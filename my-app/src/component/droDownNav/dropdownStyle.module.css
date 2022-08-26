@@ -6,7 +6,7 @@
 .box>div:hover{
     background-color: #eeeeee;
     color: black;
-    transition:0.2s ;
+    transition:0.3s ;
     cursor: pointer;
     
 }
@@ -27,9 +27,9 @@
     width: 1200px;
     top: 52px;
     left: 0px;
-
 }
-.hov:hover .boxDiv{transition: 0.4s;}
+
+.hov:hover .boxDiv{transition: 0.3s;}
 .hov:hover .boxDiv{display: block;}
 
 .boxDiv ul li{
