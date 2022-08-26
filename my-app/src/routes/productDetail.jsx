@@ -4,6 +4,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  useToast,
 } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
@@ -16,6 +17,7 @@ import Navbar from '../component/navbar/Navbar'
 
 
 const ProductDetail = () => {
+  const toast = useToast()
 
   const { name ,id } = useParams();
   // console.log(name,id)
@@ -39,13 +41,21 @@ const ProductDetail = () => {
   const handleCart=()=>{
     addToCart(productDetail).then((res)=>{
       console.log(res);
-      setClicked(true)
-
+      toast({
+        title: `Item Added To Cart`,
+        position: `top-right`,
+        isClosable: true,
+        duration: 3000
+      })
     }).catch((err)=>{
       console.log(err)
     })
 
   }
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
 
   const handleWishlist=()=>{
     

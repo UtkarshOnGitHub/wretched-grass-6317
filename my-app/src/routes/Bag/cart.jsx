@@ -50,10 +50,10 @@ const Cart = () => {
   const handleDelete=(value)=>{
     delFromCart(value).then((res)=>{
       console.log(res)
+      getData()
     }).catch((err)=>{
       console.log(err)
     })
-    getData()
     
   }
   const handlePatch=(id, qty,value)=>{

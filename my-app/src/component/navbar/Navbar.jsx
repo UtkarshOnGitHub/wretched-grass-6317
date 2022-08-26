@@ -1,19 +1,25 @@
 import { Flex , Box, Img, Text, Input } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import navStyles from "./navbar.module.css"
 import {MdOutlineAccountCircle} from "react-icons/md"
 import {FiHeart} from "react-icons/fi"
 import {BsBag} from "react-icons/bs"
 import {GiHamburgerMenu} from "react-icons/gi"
 import { Link } from 'react-router-dom'
+import DrawerExample from '../modals/sideBar'
 
 const Navbar = () => {
+
+const [clicked , setClicked] = useState(false)
+console.log(clicked)
+
   return (
     <div style={{ width:"100%",margin:"auto", display:"flex" , justifyContent:"center", backgroundColor:"#2d2d2d" }}>
         <Flex bg="#2d2d2d" alignItems="center">
             <Flex className={navStyles.hamburger}>
                 <Box>
-                    <GiHamburgerMenu/>
+                    <GiHamburgerMenu onClick={()=>{setClicked(true)}}/>
+                    {clicked && <DrawerExample clicked={clicked} setClicked={setClicked}/>}
                 </Box>
             </Flex>
             <Flex className={navStyles.navbar}>

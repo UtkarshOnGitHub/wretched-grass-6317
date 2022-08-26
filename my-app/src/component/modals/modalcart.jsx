@@ -7,24 +7,24 @@ import {
     AlertDialogOverlay,
     Button,
     AlertDialogCloseButton,
-    useDisclosure
+    useDisclosure,
+    Modal
   } from '@chakra-ui/react'
 
   import React from 'react'
 
 
-function TransitionExample() {
+function TransitionExample({clicked}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = React.useRef()
   
     return (
       <>
-        <Button onClick={onOpen}>Discard</Button>
         <AlertDialog
           motionPreset='slideInBottom'
           leastDestructiveRef={cancelRef}
           onClose={onClose}
-          isOpen={isOpen}
+          isOpen={clicked}
           isCentered
         >
           <AlertDialogOverlay />
