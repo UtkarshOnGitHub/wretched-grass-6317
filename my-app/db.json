@@ -863,7 +863,7 @@
         "discount": "-38%",
         "review": 3
       },
-      "qty": 1,
+      "qty": 3,
       "id": 1
     },
     {
@@ -880,6 +880,21 @@
       },
       "qty": 1,
       "id": 2
+    },
+    {
+      "data": {
+        "id": 2,
+        "img": "https://images.asos-media.com/products/asos-design-pleated-shoulder-pencil-dress-in-black/202756061-1-black?$n_480w$&wid=476&fit=constrain",
+        "title": "ASOS DESIGN pleated shoulder pencil dress in black",
+        "rate": 28.5,
+        "strikedPrice": 38,
+        "qty": 1,
+        "name": "women_products",
+        "discount": "-23%",
+        "review": 2
+      },
+      "qty": 1,
+      "id": 3
     }
   ],
   "products": [

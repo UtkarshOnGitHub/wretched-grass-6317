@@ -1,11 +1,9 @@
 import {
   Box, SimpleGrid, Image, Text, Button, ButtonGroup, Table,
   Thead,
-  Tbody,
   Tfoot,
   Tr,
   Th,
-  Td,
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react'
@@ -70,7 +68,7 @@ const Cart = () => {
         <SimpleGrid>
           <Box className={style.box2}>
             <Text fontSize="3xl">Total Amount</Text>
-            <TableContainer>
+            <TableContainer className={style.table}>
               <Table variant='simple' >
                 <TableCaption><Text as="mark" fontSize="2xl">Your Total Amount is ${total+60}</Text></TableCaption>
                 <Thead>

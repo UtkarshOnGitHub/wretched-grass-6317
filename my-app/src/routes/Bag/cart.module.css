@@ -47,6 +47,8 @@
     }
     .box>div:nth-child(1){
         width: 100%;
+    }.box2{
+        width: 80%;
     }
 }
 @media only screen and (max-width: 500px){
@@ -63,6 +65,8 @@
     }
     .discount{
         margin-top: -10px;
+    }.box2{
+        width: 100%;
     }
 }
 
@@ -75,6 +79,8 @@
     position: relative;
     top: 100px;
     right: 100px;
+}.box2{
+    display: none;
 }
 
 }
