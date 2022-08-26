@@ -44,7 +44,7 @@ const Navbar = () => {
                     <FiHeart color='white'/>
                 </Box>
                 <Box>
-                    <BsBag color='white' fontSize="30px"/>
+                    <Link to="/cart"><BsBag color='white' fontSize="30px"/></Link>
                 </Box>
             </Flex>
  

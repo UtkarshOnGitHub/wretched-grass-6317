@@ -1,16 +1,17 @@
-import { Badge, Box, Image, Img, SimpleGrid, Text } from '@chakra-ui/react'
+import { Badge, Box, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import React from 'react'
 import { BsStar } from 'react-icons/bs'
 import { FiHeart } from 'react-icons/fi'
+import { Link, useParams } from 'react-router-dom'
 
 const ProductsDisplay = ({data}) => {
-    console.log(data)
+
   return (
         <div style={{display:"flex" , justifyContent:"center"}}>
             <SimpleGrid columns={[1,2,3,4]} gap={10}>
                 {data.map((e)=>{
                     return(
-                        <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={e.id}>
+                        <Link to={`/${e.name}/${e.id}`}><Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={e.id}>
                         <Image src={e.img}/>
                 
                         <Box p='6'>
@@ -68,6 +69,7 @@ const ProductsDisplay = ({data}) => {
                         </Box>
                         </Box>
                     </Box>
+                    </Link>
                     
                     )
                 })}

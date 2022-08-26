@@ -1,0 +1,80 @@
+.box{ 
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    height: 80%;
+    padding: 30px;
+    gap: 30px;
+    
+}
+.box>div:nth-child(1){
+    border: 1px solid rgb(252, 252, 252);
+    border-radius: 10px;
+    width:30%;
+    height: 100%;
+    overflow: hidden;
+}
+.box>div>img{
+    width: 100%;
+    height: 100%;
+}.on{
+    display: none;
+}.discount{
+    margin-top: 10px;
+}
+
+
+
+.box2{
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+@media only screen and (max-width: 1500px)  {
+    .box{
+        height: 100%;
+    }
+    .box>div:nth-child(1){
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .box{
+        width: 80%;
+    }
+    .box>div:nth-child(1){
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 500px){
+    .box{
+        width: 100%;
+        height: 230px;
+    }
+    .off{
+        display: none;
+    }.on{
+        display: block;
+        position: relative;
+        top: 110px;
+    }
+    .discount{
+        margin-top: -10px;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+.box{
+    height: 210px;
+}.on{
+    display: block;
+    position: relative;
+    top: 100px;
+    right: 100px;
+}
+
+}
