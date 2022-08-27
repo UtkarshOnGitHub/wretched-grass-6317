@@ -69,3 +69,11 @@ export const addToWishList =(data)=>{
 export const delWishList =(id)=>{
     return axios.delete(`http://localhost:5000/wishlist/${id}`)
 }
+
+
+export const Createuser =(data={})=>{
+    return axios.post(`https://reqres.in/api/login`,{
+        email:data.email,
+        password:data.password
+    })
+}

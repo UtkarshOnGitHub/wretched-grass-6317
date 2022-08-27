@@ -4947,5 +4947,19 @@
       "reviews": "1029",
       "targetUrl": "/product/tatcha-indigo-overnight-repair-P474377"
     }
+  ],
+  "Users": [
+    {
+      "email": "emlaHolmes@.com",
+      "password": "123"
+    },
+    {
+      "email": "emla2Holmes@.com",
+      "password": "123"
+    },
+    {
+      "email": "emla3Holmes@.com",
+      "password": "123"
+    }
   ]
 }

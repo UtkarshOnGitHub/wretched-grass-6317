@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Image, SimpleGrid, useToast } from '@chakra-ui/react'
+import { Box, Button, ButtonGroup, Image, SimpleGrid, Toast, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { addToCart, delWishList, getWishList } from '../../api/api'

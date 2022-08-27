@@ -7,12 +7,17 @@ import {BsBag} from "react-icons/bs"
 import {GiHamburgerMenu} from "react-icons/gi"
 import { Link } from 'react-router-dom'
 import DrawerExample from '../modals/sideBar'
+import { useContext } from 'react'
+import { AppContext } from '../../context/AuthContextProvider'
 
 const Navbar = () => {
 
 const [clicked , setClicked] = useState(false)
-console.log(clicked)
 
+const {profileModal , setProfileModal} = useContext(AppContext)
+    const handleProfileModal=()=>{
+        setProfileModal(true)
+    }
   return (
     <div style={{ width:"100%",margin:"auto", display:"flex" , justifyContent:"center", backgroundColor:"#2d2d2d" }}>
         <Flex bg="#2d2d2d" alignItems="center">
@@ -44,7 +49,7 @@ console.log(clicked)
             </Flex>
             <Flex className={navStyles.icons} gap="40px" marginLeft="60px" fontSize="30px">
                 <Box>
-                    <MdOutlineAccountCircle color='white' fontSize="34px"/>
+                    <MdOutlineAccountCircle color='white' fontSize="34px" onClick={handleProfileModal}/>
                 </Box>
                 <Box>
                 <Link to="/wishlist"><FiHeart color='white'/></Link>
