@@ -57,3 +57,15 @@ export const countCart =(id,qty,value)=>{
     })
 
 }
+export const getWishList =()=>{
+    return axios.get(`http://localhost:5000/wishlist`)
+}
+
+export const addToWishList =(data)=>{
+    return axios.post(`http://localhost:5000/wishlist` ,{
+        data:data,
+    })
+}
+export const delWishList =(id)=>{
+    return axios.delete(`http://localhost:5000/wishlist/${id}`)
+}

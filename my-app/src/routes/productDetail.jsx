@@ -9,7 +9,7 @@ import {
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { addToCart, getProductsWithID } from '../api/api'
+import { addToCart, addToWishList, getProductsWithID } from '../api/api'
 import Dropdown from '../component/droDownNav/Dropdown'
 import Footer from '../component/footer/footer'
 import TransitionExample from '../component/modals/modalcart'
@@ -58,7 +58,15 @@ const ProductDetail = () => {
   }, []);
 
   const handleWishlist=()=>{
-    
+    addToWishList(productDetail).then((res)=>{
+      console.log(res)
+      toast({
+        title: `Item Added To WishList`,
+        position: `top-right`,
+        isClosable: true,
+        duration: 3000
+      })
+    })
   }
 
 

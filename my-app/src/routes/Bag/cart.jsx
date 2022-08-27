@@ -60,6 +60,18 @@ const Cart = () => {
         getData()
     })
   }
+  if(cartItem.length===0){
+    return(
+      <div>
+      <Navbar />
+      <Dropdown />
+      <Box display="flex" justifyContent="center" w="100%" margin="auto">
+        <Image src="https://careerindex.co.in/assets/images/emptycart.png"/>
+      </Box>
+      <Footer/>
+      </div>
+    )
+  }
   return (
     <div>
       <Navbar />

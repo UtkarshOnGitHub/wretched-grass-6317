@@ -850,53 +850,8 @@
       "review": 4
     }
   ],
-  "cart": [
-    {
-      "data": {
-        "id": 7,
-        "img": "https://images.asos-media.com/products/stradivarius-shirred-poplin-midi-dress-with-puff-sleeves-in-white/202944415-1-white?$n_480w$&wid=476&fit=constrain",
-        "title": "New Look puff sleeve midi dress with cut out detail in green",
-        "rate": 100.5,
-        "strikedPrice": 77,
-        "qty": 1,
-        "name": "women_products",
-        "discount": "-38%",
-        "review": 3
-      },
-      "qty": 3,
-      "id": 1
-    },
-    {
-      "data": {
-        "id": 2,
-        "img": "https://images.asos-media.com/products/asos-design-pleated-shoulder-pencil-dress-in-black/202756061-1-black?$n_480w$&wid=476&fit=constrain",
-        "title": "ASOS DESIGN pleated shoulder pencil dress in black",
-        "rate": 28.5,
-        "strikedPrice": 38,
-        "qty": 1,
-        "name": "women_products",
-        "discount": "-23%",
-        "review": 2
-      },
-      "qty": 1,
-      "id": 2
-    },
-    {
-      "data": {
-        "id": 2,
-        "img": "https://images.asos-media.com/products/asos-design-pleated-shoulder-pencil-dress-in-black/202756061-1-black?$n_480w$&wid=476&fit=constrain",
-        "title": "ASOS DESIGN pleated shoulder pencil dress in black",
-        "rate": 28.5,
-        "strikedPrice": 38,
-        "qty": 1,
-        "name": "women_products",
-        "discount": "-23%",
-        "review": 2
-      },
-      "qty": 1,
-      "id": 3
-    }
-  ],
+  "cart": [],
+  "wishlist": [],
   "products": [
     {
       "id": 201802818,

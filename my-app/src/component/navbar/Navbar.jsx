@@ -32,9 +32,9 @@ console.log(clicked)
                     </Text>
                 </Box>
                 <Box>
-                    < Text fontSize="2xl" color="white">
-                        <Link to= "/men">Men</Link>
-                    </Text>
+                <Link to= "/men">< Text fontSize="2xl" color="white">
+                        Men
+                    </Text></Link>
                 </Box>
             </Flex>
             <Flex className={navStyles.input}>
@@ -47,7 +47,7 @@ console.log(clicked)
                     <MdOutlineAccountCircle color='white' fontSize="34px"/>
                 </Box>
                 <Box>
-                    <FiHeart color='white'/>
+                <Link to="/wishlist"><FiHeart color='white'/></Link>
                 </Box>
                 <Box>
                     <Link to="/cart"><BsBag color='white' fontSize="30px"/></Link>
