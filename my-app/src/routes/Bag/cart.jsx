@@ -16,11 +16,13 @@ import Navbar from '../../component/navbar/Navbar'
 import style from "./cart.module.css"
 import { CgRemove } from "react-icons/cg"
 import TransitionExample from '../../component/modals/modalcart'
+import { SizeExample } from '../checkout'
 
 const Cart = () => {
   const [cartItem, setCartItem] = useState([])
   const [count, setCount] = useState(1);
   const [total ,setTotal] = useState(0)
+  const [state , setState] = useState(false)
 
   const getData = () => {
     getCart().then((res) => {
@@ -99,6 +101,11 @@ const Cart = () => {
                 </Tfoot>
               </Table>
             </TableContainer>
+            <Button marginTop="10px" onClick={()=>{setState(true)}}>Proceed To Checkout</Button>
+          </Box>
+          <Box className={style.pay}>
+            <Text as="mark" fontSize="2xl">Your Total Amount Is ${cartItem.length==0 ? 0.00 : total+60}</Text><br/>
+            <Button marginTop="10px" onClick={()=>{setState(true)}}>Proceed To Checkout</Button>
           </Box>
           {cartItem.map((e) => {
             return (
@@ -112,7 +119,7 @@ const Cart = () => {
                     <Text as="b" marginTop="10px" fontSize="18px">Price :${e.data.rate}</Text>
                   </Box>
                   <Box className={style.on}>
-                    <CgRemove fontSize="20px" />
+                    <CgRemove fontSize="20px" onClick={()=>{handleDelete(e.id)}} />
                   </Box>
                   <Box className={style.discount}>
                     <Text as="mark" fontSize="18px">Discount :${e.data.discount}</Text>
@@ -135,7 +142,7 @@ const Cart = () => {
 
         </SimpleGrid>
       </div>
-      
+      <SizeExample state={state} setState={setState}/>
       <Footer />
     </div>
   )

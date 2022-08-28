@@ -11,7 +11,7 @@ const Pagination = ({page , handleSetPage}) => {
         <ButtonGroup gap="10px" marginTop="20px">
             <Button disabled={page==1} onClick={()=>{handlePageChange(-1)}}>Prev</Button>
             <Button>{page}</Button>
-            <Button onClick={()=>{handlePageChange(1)}}>Next</Button>
+            <Button disabled={page==3} onClick={()=>{handlePageChange(1)}}>Next</Button>
         </ButtonGroup>
     </div>
   )

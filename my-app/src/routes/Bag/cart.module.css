@@ -24,6 +24,9 @@
 }.discount{
     margin-top: 10px;
 }
+.pay{
+    display: none;
+}
 
 
 
@@ -58,10 +61,6 @@
     }
     .off{
         display: none;
-    }.on{
-        display: block;
-        position: relative;
-        top: 110px;
     }
     .discount{
         margin-top: -10px;
@@ -77,10 +76,12 @@
 }.on{
     display: block;
     position: relative;
-    top: 100px;
-    right: 101px;
+    top: -76px;
+    right: -93px;
 }.box2{
     display: none;
+}.pay{
+    display: block;
 }
 
 }

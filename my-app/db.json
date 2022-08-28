@@ -853,32 +853,32 @@
   "cart": [
     {
       "data": {
-        "id": 22,
-        "img": "https://images.asos-media.com/products/timberland-small-logo-print-t-shirt-in-navy/203623804-1-navy?$n_480w$&wid=476&fit=constrain",
-        "title": "ASOS DESIGN pleated cami midi dress with drawstring waist in navy",
-        "rate": 70.5,
-        "strikedPrice": 56,
+        "id": 12,
+        "img": "https://images.asos-media.com/products/adidas-originals-adicolour-bold-t-shirt-dress-in-black/201098659-1-black?$n_480w$&wid=476&fit=constrain",
+        "title": "ASOS DESIGN cotton mini shirt dress in black - BLACK",
+        "rate": 40.5,
+        "strikedPrice": 30,
         "qty": 1,
-        "name": "men_products",
-        "discount": "-50%",
-        "review": 3
+        "name": "women_products",
+        "discount": "-30%",
+        "review": 4
       },
       "qty": 1,
-      "id": 1
+      "id": 2
     }
   ],
   "wishlist": [
     {
       "data": {
-        "id": 22,
-        "img": "https://images.asos-media.com/products/timberland-small-logo-print-t-shirt-in-navy/203623804-1-navy?$n_480w$&wid=476&fit=constrain",
-        "title": "ASOS DESIGN pleated cami midi dress with drawstring waist in navy",
-        "rate": 70.5,
-        "strikedPrice": 56,
+        "id": 12,
+        "img": "https://images.asos-media.com/products/adidas-originals-adicolour-bold-t-shirt-dress-in-black/201098659-1-black?$n_480w$&wid=476&fit=constrain",
+        "title": "ASOS DESIGN cotton mini shirt dress in black - BLACK",
+        "rate": 40.5,
+        "strikedPrice": 30,
         "qty": 1,
-        "name": "men_products",
-        "discount": "-50%",
-        "review": 3
+        "name": "women_products",
+        "discount": "-30%",
+        "review": 4
       },
       "id": 1
     }

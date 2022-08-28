@@ -27,7 +27,7 @@ import { AppContext } from '../../context/AuthContextProvider'
 export function InitialFocus({ openNow, setClose }) {
 
 
-    const { setIsAuth} = useContext(AppContext)
+    const { setIsAuth , setProfileName} = useContext(AppContext)
 
 
     const initialRef = React.useRef(null)
@@ -55,6 +55,7 @@ export function InitialFocus({ openNow, setClose }) {
 
     const handleNameChange = (e) => {
         setName(e.target.value)
+        setProfileName(e.target.value)
     }
 
 

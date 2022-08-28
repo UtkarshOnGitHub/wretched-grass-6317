@@ -7,7 +7,7 @@ import { Link, useParams } from 'react-router-dom'
 const ProductsDisplay = ({data}) => {
 
   return (
-        <div style={{display:"flex" , justifyContent:"center"}}>
+        <div style={{display:"flex" , justifyContent:"center", marginTop:"20px"}}>
             <SimpleGrid columns={[1,2,3,4]} gap={10}>
                 {data.map((e)=>{
                     return(

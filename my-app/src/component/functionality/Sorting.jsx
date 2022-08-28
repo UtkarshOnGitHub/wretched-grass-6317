@@ -7,21 +7,24 @@ import {
     Select,
     Stack
 } from '@chakra-ui/react';
+import { useSearchParams } from 'react-router-dom';
 
 const Sorting = ({ data, handlepropSort }) => {
 
-
+    const [searchParams , setSearchParams] = useSearchParams()
     const handleSort = (e) => {
         if (e.target.value == "asc") {
             let newData = data.sort((a, b) => {
                 return a.rate - b.rate
             })
             handlepropSort(newData)
+            setSearchParams({sortBy:"rate-in-desc"})
         } else if (e.target.value == "desc") {
             let newData = data.sort((a, b) => {
                 return b.rate - a.rate
             })
             handlepropSort(newData)
+            setSearchParams({sortBy:"rate-in-asc"})
         }
         else {
             handlepropSort(data)
@@ -38,6 +41,7 @@ const Sorting = ({ data, handlepropSort }) => {
                 else return 0
             })
             handlepropSort(newData)
+            setSearchParams({sortBy:"title-in-asc"})
         } else if (e.target.value == "desc") {
             let newData = data.sort((a, b) => {
                 if (a.title > b.title) return -1;
@@ -45,6 +49,7 @@ const Sorting = ({ data, handlepropSort }) => {
                 else return 0
             })
             handlepropSort(newData)
+            setSearchParams({sortBy:"title-in-desc"})
         }
     }
     const handleSortRating=(e)=>{
@@ -53,11 +58,13 @@ const Sorting = ({ data, handlepropSort }) => {
                 return a.review- b.review
             })
             handlepropSort(newData)
+            setSearchParams({sortBy:"review-in-asc"})
         } else if (e.target.value == "desc") {
             let newData = data.sort((a, b) => {
                 return b.review- a.review
             })
             handlepropSort(newData)
+            setSearchParams({sortBy:"review-in-asc"})
         }
         else {
             handlepropSort(data)

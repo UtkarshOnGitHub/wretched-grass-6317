@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { getWomenProducts } from '../../api/api'
 import Dropdown from '../../component/droDownNav/Dropdown'
 import Footer from '../../component/footer/footer'
@@ -11,7 +12,7 @@ import Pagination from '../../component/productsDisplay/pagination'
 import ProductsDisplay from '../../component/productsDisplay/ProductsDisplay'
 
 const Women = () => {
-
+  const [searchParams , setSearchParams] = useSearchParams()
   const [products , setProducts] = useState([])
 
   const [page, setPage] = useState(1);
@@ -38,6 +39,7 @@ const Women = () => {
   }
   const handlepropSort=(value)=>{
     setProducts([...value])
+    setSearchParams({query:"sorting"})
   }
 
   return (
@@ -45,7 +47,7 @@ const Women = () => {
       <Navbar/>
       <Dropdown/>
       <Sorting handlepropSort={handlepropSort} data={products}/>
-      {isLoading ? <Loading/> : <ProductsDisplay data={products}/>}
+      {isLoading ? <Loading/> : <ProductsDisplay data={products} />}
       <Pagination page={page} handleSetPage={handleSetPage}/>
       <Footer/>
     </div>
