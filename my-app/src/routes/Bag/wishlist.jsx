@@ -64,6 +64,7 @@ if(list.length==0){
         <div>
             <Navbar/>
             <Dropdown/>
+            <Text as="b" fontSize="3xl">Your Wishlist</Text>
             <SimpleGrid columns={[1,2,3,4]}>
                 {list.map((e) => {
                     return (

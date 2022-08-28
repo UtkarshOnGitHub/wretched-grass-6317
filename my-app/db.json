@@ -865,6 +865,21 @@
       },
       "qty": 1,
       "id": 2
+    },
+    {
+      "data": {
+        "id": 6,
+        "img": "https://images.asos-media.com/products/stradivarius-shirred-poplin-midi-dress-with-puff-sleeves-in-pink/202944463-1-pink?$n_480w$&wid=476&fit=constrain",
+        "title": "Stradivarius shirred poplin midi dress with puff sleeves in pink",
+        "rate": 66.5,
+        "strikedPrice": 56,
+        "qty": 1,
+        "name": "women_products",
+        "discount": "-18%",
+        "review": 4
+      },
+      "qty": 1,
+      "id": 3
     }
   ],
   "wishlist": [
