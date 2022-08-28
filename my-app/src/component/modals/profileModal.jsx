@@ -30,15 +30,8 @@ function BackdropExample({profilemodal}) {
   
     return (
       <>
-        {/* <Button
-          onClick={() => {
-            setOverlay(<OverlayOne />)
-            onOpen()
-          }}
-        >
-          Use Overlay one
-        </Button> */}
-       
+
+     
         <Modal isCentered isOpen={profilemodal} onClose={onClose}>
           {overlay}
           <ModalContent>

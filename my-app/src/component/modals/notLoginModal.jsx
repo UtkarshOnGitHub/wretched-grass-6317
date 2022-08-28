@@ -30,14 +30,14 @@ export function DrawerExample({login , setLogin}) {
     const handleClose=()=>{
         setLogin(false)
     }
-    const { setIsAuth} = useContext(AppContext)
+    const { setIsAuth ,setProfileName} = useContext(AppContext)
     const initialRef = React.useRef(null)
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
 
 
     const initail = {
-        "email": "",
+        "email": "eve.holt@reqres.in",
         "password": ""
     }
     const [formData, setFormData] = useState(initail)
@@ -53,6 +53,7 @@ export function DrawerExample({login , setLogin}) {
 
     const handleNameChange = (e) => {
         setName(e.target.value)
+        setProfileName(e.target.value)
     }
 
 
@@ -122,7 +123,7 @@ export function DrawerExample({login , setLogin}) {
               <Button variant='outline' mr={3} onClick={handleClose}>
                 Cancel
               </Button>
-              <Button colorScheme='blue' onClick={handleSubmit}>Save</Button>
+              <Button colorScheme='blue' onClick={handleSubmit}>Log In</Button>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

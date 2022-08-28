@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { getMenProducts } from '../../api/api'
 import Dropdown from '../../component/droDownNav/Dropdown'
 import Footer from '../../component/footer/footer'
+import Sorting from '../../component/functionality/Sorting'
 import Navbar from '../../component/navbar/Navbar'
 import Loading from '../../component/productsDisplay/loading'
 import Pagination from '../../component/productsDisplay/pagination'
@@ -14,8 +15,7 @@ const Men = () => {
 
     const [page, setPage] = useState(1);
     const [isLoading , setIsLoading] = useState(true)
-  
-    useEffect(()=>{
+    const getData=()=>{
       setIsLoading(true)
       getMenProducts({
         limit:16,
@@ -28,16 +28,24 @@ const Men = () => {
         console.log(err);
         setIsLoading(false)
       })
+    }
+  
+    useEffect(()=>{
+      getData()
     },[page])
   
     console.log(isLoading)
     const handleSetPage=(value)=>{
         setPage(value)
     }
+    const handlepropSort=(value)=>{
+      setProducts([...value])
+    }
   return (
     <div>
         <Navbar/>
         <Dropdown/>
+        <Sorting handlepropSort={handlepropSort} data={products}/>
         {isLoading ? <Loading/> : <ProductsDisplay data={products}/>}
         <Pagination page={page} handleSetPage={handleSetPage}/>
         <Footer/>

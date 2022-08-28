@@ -18,7 +18,7 @@ export const getMenProducts=(params={})=>{
     return axios.get(`http://localhost:5000/men_products`,{
         params:{
             _limit:params.limit,
-            _page:params.page
+            _page:params.page,
         }
     })
 }

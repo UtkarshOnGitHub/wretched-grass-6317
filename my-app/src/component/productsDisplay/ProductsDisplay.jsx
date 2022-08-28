@@ -14,8 +14,8 @@ const ProductsDisplay = ({data}) => {
                         <Link to={`/${e.name}/${e.id}`}><Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={e.id}>
                         <Image src={e.img}/>
                 
-                        <Box p='6'>
-                        <Box display='flex' alignItems='baseline'>
+                        <Box p='6' >
+                        <Box display='flex' alignItems='baseline' >
                             <Badge borderRadius='full' px='2' colorScheme='teal'>
                             New
                             </Badge>

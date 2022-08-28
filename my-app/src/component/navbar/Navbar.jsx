@@ -14,7 +14,7 @@ const Navbar = () => {
 
 const [clicked , setClicked] = useState(false)
 
-const {profileModal , setProfileModal} = useContext(AppContext)
+const {profileModal , setProfileModal ,profileName} = useContext(AppContext)
     const handleProfileModal=()=>{
         setProfileModal(true)
     }
@@ -47,9 +47,9 @@ const {profileModal , setProfileModal} = useContext(AppContext)
                     <Input className={navStyles.inputfiled} padding="23px" bg="white" placeholder='Search For Items And Brand' />
                 </Box>
             </Flex>
-            <Flex className={navStyles.icons} gap="40px" marginLeft="60px" fontSize="30px">
-                <Box>
-                    <MdOutlineAccountCircle color='white' fontSize="34px" onClick={handleProfileModal}/>
+            <Flex className={navStyles.icons} gap="40px" marginLeft="60px" fontSize="30px" alignItems="center">
+                <Box color="white" display="flex" alignItems="center">
+                    {profileName!=null ? profileName :<MdOutlineAccountCircle color='white' fontSize="34px" onClick={handleProfileModal}/>}
                 </Box>
                 <Box>
                 <Link to="/wishlist"><FiHeart color='white'/></Link>

@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Image, SimpleGrid, Toast, useToast } from '@chakra-ui/react'
+import { Box, Button, ButtonGroup, Image, SimpleGrid, Text, Toast, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { addToCart, delWishList, getWishList } from '../../api/api'
@@ -86,7 +86,7 @@ if(list.length==0){
                                     </Box>
 
                                     <Box>
-                                        {e.data.rate}
+                                        <Text fontSize="1xl" as="mark">{e.data.rate}</Text>
                                     </Box>
                                         <Button onClick={()=>{handleCart(e)}}>Add To Bag</Button><br/>
                                         <Button marginTop="10px" onClick={()=>{handleDelete(e.id)}}>Remove From WishList</Button>

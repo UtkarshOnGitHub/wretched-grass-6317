@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { getWomenProducts } from '../../api/api'
 import Dropdown from '../../component/droDownNav/Dropdown'
 import Footer from '../../component/footer/footer'
+import Sorting from '../../component/functionality/Sorting'
 import Navbar from '../../component/navbar/Navbar'
 import Loading from '../../component/productsDisplay/loading'
 import Pagination from '../../component/productsDisplay/pagination'
@@ -35,11 +36,15 @@ const Women = () => {
   const handleSetPage=(value)=>{
       setPage(value)
   }
+  const handlepropSort=(value)=>{
+    setProducts([...value])
+  }
 
   return (
     <div>
       <Navbar/>
       <Dropdown/>
+      <Sorting handlepropSort={handlepropSort} data={products}/>
       {isLoading ? <Loading/> : <ProductsDisplay data={products}/>}
       <Pagination page={page} handleSetPage={handleSetPage}/>
       <Footer/>

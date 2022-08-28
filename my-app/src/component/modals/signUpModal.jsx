@@ -39,7 +39,7 @@ export function InitialFocus({ openNow, setClose }) {
     }
 
     const initail = {
-        "email": "",
+        "email": "eve.holt@reqres.in",
         "password": ""
     }
     const [formData, setFormData] = useState(initail)
@@ -119,7 +119,7 @@ return (
 
                 <ModalFooter>
                     <Button colorScheme='blue' mr={3} onClick={handleSubmit}>
-                        Save
+                        Log In
                     </Button>
                     <Button onClick={onClose}>Cancel</Button>
                 </ModalFooter>

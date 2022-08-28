@@ -1,7 +1,9 @@
 import { SimpleGrid ,Box, Text, Center, Stack, Button } from '@chakra-ui/react'
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const Section = () => {
+    const navigate = useNavigate()
   return (
     <div>
         <SimpleGrid columns={[1,2,2,4]} spacing={10} w="85%" margin="auto" marginTop="30px">
@@ -54,12 +56,12 @@ const Section = () => {
                 <Box>
                     <img src="https://images.asos-media.com/products/asos-design-pleated-shoulder-pencil-dress-in-black/202756061-1-black?$n_480w$&wid=476&fit=constrain" alt="" />
                     <Text  fontSize="4xl" marginTop="20px" fontWeight="500">Big Brand</Text>
-                    <Button marginTop="10px" padding="25px" borderRadius="none" border="1px solid black" backgroundColor="white" w="200px">Shop Now</Button>
+                    <Button marginTop="10px" padding="25px" onClick={()=>{navigate("/women")}}borderRadius="none" border="1px solid black" backgroundColor="white" w="200px">Shop Now</Button>
                 </Box>
                 <Box>
                         <img src="https://images.asos-media.com/products/asos-design-oversized-t-shirt-in-black-with-photographic-street-back-print/202946982-1-black?$n_480w$&wid=476&fit=constrain" alt="" />
                         <Text  fontSize="4xl" marginTop="20px" fontWeight="500">Going Out</Text>
-                        <Button marginTop="10px" padding="25px" borderRadius="none" border="1px solid black" backgroundColor="white" w="200px">Shop Now</Button>
+                        <Button marginTop="10px" padding="25px" onClick={()=>{navigate("/men")}} borderRadius="none" border="1px solid black" backgroundColor="white" w="200px">Shop Now</Button>
                 </Box>
         </SimpleGrid>
     </div>
