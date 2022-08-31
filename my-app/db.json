@@ -850,54 +850,8 @@
       "review": 4
     }
   ],
-  "cart": [
-    {
-      "data": {
-        "id": 12,
-        "img": "https://images.asos-media.com/products/adidas-originals-adicolour-bold-t-shirt-dress-in-black/201098659-1-black?$n_480w$&wid=476&fit=constrain",
-        "title": "ASOS DESIGN cotton mini shirt dress in black - BLACK",
-        "rate": 40.5,
-        "strikedPrice": 30,
-        "qty": 1,
-        "name": "women_products",
-        "discount": "-30%",
-        "review": 4
-      },
-      "qty": 1,
-      "id": 2
-    },
-    {
-      "data": {
-        "id": 6,
-        "img": "https://images.asos-media.com/products/stradivarius-shirred-poplin-midi-dress-with-puff-sleeves-in-pink/202944463-1-pink?$n_480w$&wid=476&fit=constrain",
-        "title": "Stradivarius shirred poplin midi dress with puff sleeves in pink",
-        "rate": 66.5,
-        "strikedPrice": 56,
-        "qty": 1,
-        "name": "women_products",
-        "discount": "-18%",
-        "review": 4
-      },
-      "qty": 1,
-      "id": 3
-    }
-  ],
-  "wishlist": [
-    {
-      "data": {
-        "id": 12,
-        "img": "https://images.asos-media.com/products/adidas-originals-adicolour-bold-t-shirt-dress-in-black/201098659-1-black?$n_480w$&wid=476&fit=constrain",
-        "title": "ASOS DESIGN cotton mini shirt dress in black - BLACK",
-        "rate": 40.5,
-        "strikedPrice": 30,
-        "qty": 1,
-        "name": "women_products",
-        "discount": "-30%",
-        "review": 4
-      },
-      "id": 1
-    }
-  ],
+  "cart": [],
+  "wishlist": [],
   "products": [
     {
       "id": 201802818,
