@@ -46,7 +46,8 @@ export function SizeExample({ state, setState }) {
 
     const sizes = ['full']
     const handleClose = () => {
-        setState(false)
+        navigate("/")
+ 
     }
     const ref = useRef()
     const handleSubmit = () => {
@@ -84,7 +85,7 @@ export function SizeExample({ state, setState }) {
 
                         <FormControl mt={4}>
                             <FormLabel>Card Number</FormLabel>
-                            <Input placeholder='Card Number' />
+                            <Input placeholder='XXXX-XXXX-XXXX-XXXX' />
                         </FormControl>
                         <FormControl mt={4}>
                             <FormLabel>Email</FormLabel>

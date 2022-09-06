@@ -55,7 +55,9 @@ const Dropdown = () => {
                 </span>
             <Container >
                 <Box className={dropdownStyle.boxDiv}>
-                    <Flex>
+                    <Flex className={dropdownStyle.zindex} style={{
+                                zIndex:10
+                    }}>
                         <ul>
                             <Text fontSize="2xl">Shop By Products</Text>
                             {saledata.map((e)=>{

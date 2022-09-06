@@ -10,7 +10,8 @@ import { InitialFocus } from '../../component/modals/signUpModal'
 import { useContext } from 'react'
 import { AppContext } from '../../context/AuthContextProvider'
 import { AlertDialogExample, DrawerExample } from '../../component/modals/notLoginModal'
-
+import styled from '@emotion/styled'
+import style from "./style.module.css"
 
 
 

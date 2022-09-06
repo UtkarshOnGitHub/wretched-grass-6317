@@ -1,4 +1,4 @@
-import { Flex , Box, Img, Text, Input } from '@chakra-ui/react'
+import { Flex , Box, Img, Text, Input, Avatar } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import navStyles from "./navbar.module.css"
 import {MdOutlineAccountCircle} from "react-icons/md"
@@ -19,7 +19,7 @@ const {profileModal , setProfileModal ,profileName} = useContext(AppContext)
         setProfileModal(true)
     }
   return (
-    <div style={{ width:"100%",margin:"auto", display:"flex" , justifyContent:"center", backgroundColor:"#2d2d2d" }}>
+    <div style={{width:"100%",margin:"auto", display:"flex" , justifyContent:"center", backgroundColor:"#2d2d2d"}}>
         <Flex bg="#2d2d2d" alignItems="center">
             <Flex className={navStyles.hamburger}>
                 <Box>
@@ -49,7 +49,7 @@ const {profileModal , setProfileModal ,profileName} = useContext(AppContext)
             </Flex>
             <Flex className={navStyles.icons} gap="40px" marginLeft="60px" fontSize="30px" alignItems="center">
                 <Box color="white" display="flex" alignItems="center">
-                    {profileName!=null ? profileName :<MdOutlineAccountCircle color='white' fontSize="34px" onClick={handleProfileModal}/>}
+                    {profileName!=null ? <Avatar name={profileName} src='https://bit.ly/broken-link' /> :<MdOutlineAccountCircle color='white' fontSize="34px" onClick={handleProfileModal}/>}
                 </Box>
                 <Box>
                 <Link to="/wishlist"><FiHeart color='white'/></Link>

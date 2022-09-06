@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 export const getWomenProducts=(params={})=>{
-    return axios.get(`http://localhost:5000/women_products`,{
+    return axios.get(`https://secure-atoll-55277.herokuapp.com/women_products`,{
         params:{
             _limit:params.limit,
             _page:params.page
@@ -11,11 +11,11 @@ export const getWomenProducts=(params={})=>{
 }
 
 export const getProductsWithID=(name,id)=>{
-    return axios.get(`http://localhost:5000/${name}/${id}`)
+    return axios.get(`https://secure-atoll-55277.herokuapp.com/${name}/${id}`)
 }
 
 export const getMenProducts=(params={})=>{
-    return axios.get(`http://localhost:5000/men_products`,{
+    return axios.get(`https://secure-atoll-55277.herokuapp.com/men_products`,{
         params:{
             _limit:params.limit,
             _page:params.page,
@@ -26,7 +26,7 @@ export const getMenProducts=(params={})=>{
 
 
 export const getListProducts=(params={})=>{
-    return axios.get(`http://localhost:5000/products`,{
+    return axios.get(`https://secure-atoll-55277.herokuapp.com/products`,{
         params:{
             _limit:params.limit,
             _page:params.page
@@ -36,38 +36,37 @@ export const getListProducts=(params={})=>{
 
 
 export const getCart =()=>{
-    return axios.get(`http://localhost:5000/cart`)
+    return axios.get(`https://secure-atoll-55277.herokuapp.com/cart`)
 }
 
 export const addToCart =(data)=>{
-    return axios.post(`http://localhost:5000/cart` ,{
+    return axios.post(`https://secure-atoll-55277.herokuapp.com/cart` ,{
         data:data,
         qty:1
     })
 }
 export const delFromCart =(id)=>{
-    return axios.delete(`http://localhost:5000/cart/${id}`)
+    return axios.delete(`https://secure-atoll-55277.herokuapp.com/cart/${id}`)
 
 }
 
 export const countCart =(id,qty,value)=>{
-    return axios.patch(`http://localhost:5000/cart/${id}`,{
+    return axios.patch(`https://secure-atoll-55277.herokuapp.com/cart/${id}`,{
         qty:qty+value
-
     })
 
 }
 export const getWishList =()=>{
-    return axios.get(`http://localhost:5000/wishlist`)
+    return axios.get(`https://secure-atoll-55277.herokuapp.com/wishlist`)
 }
 
 export const addToWishList =(data)=>{
-    return axios.post(`http://localhost:5000/wishlist` ,{
+    return axios.post(`https://secure-atoll-55277.herokuapp.com/wishlist` ,{
         data:data,
     })
 }
 export const delWishList =(id)=>{
-    return axios.delete(`http://localhost:5000/wishlist/${id}`)
+    return axios.delete(`https://secure-atoll-55277.herokuapp.com/wishlist/${id}`)
 }
 
 

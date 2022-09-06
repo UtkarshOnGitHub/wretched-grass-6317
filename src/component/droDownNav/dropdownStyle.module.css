@@ -10,7 +10,9 @@
     cursor: pointer;
     
 }
-
+.zindex{
+    z-index: 10;
+}
 .span{
     display: block;
     padding: 0 12px 0 14px;
@@ -27,8 +29,11 @@
     width: 1200px;
     top: 52px;
     left: 0px;
+    z-index: 10;
 }
-
+.hov{
+    z-index: 10;
+}
 .hov:hover .boxDiv{transition: 0.3s;}
 .hov:hover .boxDiv{display: block;}
 
