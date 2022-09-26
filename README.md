@@ -28,7 +28,7 @@
 
 
 <h1>LINK</h1>
-[AOSO CLick Here](https://asos-lake.vercel.app/)
+[AOSO Click Here](https://asos-lake.vercel.app/)
 
 
 <h2>Enjoy </h2>
