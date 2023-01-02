@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 export const getWomenProducts=(params={})=>{
-    return axios.get(`https://server-production-dfc6.up.railway.app/women_products`,{
+    return axios.get(`https://nice-tick-yoke.cyclic.app/products?name=women_products`,{
         params:{
             _limit:params.limit,
             _page:params.page
@@ -10,12 +10,12 @@ export const getWomenProducts=(params={})=>{
     })
 }
 
-export const getProductsWithID=(name,id)=>{
-    return axios.get(`https://server-production-dfc6.up.railway.app/${name}/${id}`)
+export const getProductsWithID=(id)=>{
+    return axios.get(`https://nice-tick-yoke.cyclic.app/products/singleData?id=${id}`)
 }
 
 export const getMenProducts=(params={})=>{
-    return axios.get(`https://server-production-dfc6.up.railway.app/men_products`,{
+    return axios.get(`https://nice-tick-yoke.cyclic.app/products?name=men_products`,{
         params:{
             _limit:params.limit,
             _page:params.page,
@@ -35,14 +35,18 @@ export const getListProducts=(params={})=>{
 }
 
 
-export const getCart =()=>{
-    return axios.get(`https://server-production-dfc6.up.railway.app/cart`)
+export const getCart =(id)=>{
+    return axios.get(`https://nice-tick-yoke.cyclic.app/cart`,{
+        headers:{
+            id:id
+        }
+    })
 }
 
-export const addToCart =(data)=>{
-    return axios.post(`https://server-production-dfc6.up.railway.app/cart` ,{
-        data:data,
-        qty:1
+export const addToCart =(productId,userId)=>{
+    return axios.post(`https://nice-tick-yoke.cyclic.app/cart` ,{
+        productId:productId,
+        userId:userId
     })
 }
 export const delFromCart =(id)=>{
@@ -71,8 +75,15 @@ export const delWishList =(id)=>{
 
 
 export const Createuser =(data={})=>{
-    return axios.post(`https://reqres.in/api/login`,{
-        email:data.email,
-        password:data.password
-    })
+    return axios.post(`https://nice-tick-yoke.cyclic.app/user/login`,data)
 }
+export const Signuser =(data={})=>{
+    return axios.post(`https://nice-tick-yoke.cyclic.app/user/signup`,data)
+}
+
+export const getuser =(token)=>{
+    console.log(token)
+    return axios.post(`https://nice-tick-yoke.cyclic.app/user/getuser`, {token:token})
+}
+
+

@@ -33,11 +33,11 @@ const {profileModal , setProfileModal ,profileName} = useContext(AppContext)
                 </Box>
                 <Box>
                     <Text fontSize="2xl" color="white">
-                        <Link to="/women">Women</Link>
+                        <Link to="/women_products">Women</Link>
                     </Text>
                 </Box>
                 <Box>
-                <Link to= "/men">< Text fontSize="2xl" color="white">
+                <Link to= "/men_products">< Text fontSize="2xl" color="white">
                         Men
                     </Text></Link>
                 </Box>

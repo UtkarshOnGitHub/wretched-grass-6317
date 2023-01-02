@@ -24,6 +24,8 @@ const PrivateRoutes = ({ children }) => {
     const navigate = useNavigate()
     const cancelRef = React.useRef()
     const { isAuth } = useContext(AppContext)
+    console.log(isAuth)
+
     const [state , setState] = useState(true)
     const handleClose=()=>{
         

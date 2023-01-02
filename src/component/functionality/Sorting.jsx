@@ -10,13 +10,14 @@ import {
 import { useSearchParams } from 'react-router-dom';
 
 const Sorting = ({ data, handlepropSort }) => {
-
     const [searchParams , setSearchParams] = useSearchParams()
+    console.log(data)
     const handleSort = (e) => {
         if (e.target.value == "asc") {
             let newData = data.sort((a, b) => {
                 return a.rate - b.rate
             })
+            console.log(newData)
             handlepropSort(newData)
             setSearchParams({sortBy:"rate-in-desc"})
         } else if (e.target.value == "desc") {

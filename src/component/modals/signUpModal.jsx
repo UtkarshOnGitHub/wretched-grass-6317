@@ -25,11 +25,7 @@ import { AppContext } from '../../context/AuthContextProvider'
 
 
 export function InitialFocus({ openNow, setClose }) {
-
-
     const { setIsAuth , setProfileName} = useContext(AppContext)
-
-
     const initialRef = React.useRef(null)
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
@@ -39,8 +35,9 @@ export function InitialFocus({ openNow, setClose }) {
     }
 
     const initail = {
-        "email": "eve.holt@reqres.in",
-        "password": ""
+        name:"",
+        email: "",
+        password: ""
     }
     const [formData, setFormData] = useState(initail)
     const [name, setName] = useState("")
@@ -53,25 +50,33 @@ export function InitialFocus({ openNow, setClose }) {
         setFormData({ ...formData, [name]: val })
     }
 
-    const handleNameChange = (e) => {
-        setName(e.target.value)
-        setProfileName(e.target.value)
-    }
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
         Createuser(formData).then((res) => {
-            console.log(res)
-            toast({
-                title: 'LogIn SuccessFull.',
-                description: `${name} Welcome Back!`,
-                status: 'success',
-                duration: 9000,
-                isClosable: true,
-            })
-            setIsAuth(true)
-            setClose(false)
+            console.log(res.data)
+            if(res.data=="Invalid Credential"){
+                toast({
+                    title: 'Invalid Credential.',
+                    description: `PLease Provide Valid Information`,
+                    status: 'error',
+                    duration: 5000,
+                    isClosable: true,
+                })  
+            }else{
+                toast({
+                    title: 'LogIn SuccessFull.',
+                    description: `${name} Welcome Back!`,
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                })
+                localStorage.setItem("asos-token",res.data.token)
+                setIsAuth(true)
+                setClose(false)
+                setProfileName(formData.name)
+            }
         }).catch((err) => {
             console.log(err)
         })
@@ -95,7 +100,7 @@ return (
                 <ModalBody pb={6}>
                     <FormControl>
                         <FormLabel>Name</FormLabel>
-                        <Input autoFocus placeholder='First name' name="name" value={name} onChange={handleNameChange} />
+                        <Input autoFocus placeholder='First name' type={"text"} name="name" value={formData.name} onChange={handleChange} />
                     </FormControl>
                     <FormControl>
                         <FormLabel>Email</FormLabel>

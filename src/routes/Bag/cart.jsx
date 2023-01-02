@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { countCart, delFromCart, getCart } from '../../api/api'
+import { countCart, delFromCart, getCart, getuser } from '../../api/api'
 import Dropdown from '../../component/droDownNav/Dropdown'
 import Footer from '../../component/footer/footer'
 import Navbar from '../../component/navbar/Navbar'
@@ -18,25 +18,33 @@ import { CgRemove } from "react-icons/cg"
 import TransitionExample from '../../component/modals/modalcart'
 import { SizeExample } from '../checkout'
 
+
+
 const Cart = () => {
   const [cartItem, setCartItem] = useState([])
   const [count, setCount] = useState(1);
   const [total ,setTotal] = useState(0)
   const [state , setState] = useState(false)
-
+  let token = localStorage.getItem("asos-token") || null
   const getData = () => {
-    getCart().then((res) => {
-      setCartItem([...res.data])
-
-    }).catch((err) => {
-      console.log(err)
+    console.log(token)
+    getuser(token).then((response)=>{
+      console.log(response.data.id)
+      getCart(response.data.id).then((res) => {
+        console.log(res.data)
+        setCartItem(res.data)
+      }).catch((err) => {
+        console.log(err)
+      })
     })
   }
+
+  console.log(cartItem)
+
   let total1 =0
   useEffect(()=>{
     cartItem.map((e)=>{
-      // console.log(e.data.rate)
-      total1 = e.qty*(total1+e.data.rate)
+      total1 = e.productId.qty*(total1+e.productId.rate)
     })
     setTotal(total1)
   },[cartItem])
@@ -48,6 +56,7 @@ const Cart = () => {
 
 
   const handleDelete=(value)=>{
+
     delFromCart(value).then((res)=>{
       console.log(res)
       getData()
@@ -108,27 +117,28 @@ const Cart = () => {
             <Button marginTop="10px" onClick={()=>{setState(true)}}>Proceed To Checkout</Button>
           </Box>
           {cartItem.map((e) => {
+            console.log(e.productId)
             return (
-              <Box key={e.data.id} className={style.box}>
+              <Box key={e.productId._id} className={style.box}>
                 <Box>
-                  <Image src={e.data.img} />
+                  <Image src={e.productId.img} />
                 </Box>
                 <Box>
-                  <Text fontSize="19px" noOfLines={1}>{e.data.title}</Text>
+                  <Text fontSize="19px" noOfLines={1}>{e.productId.title}</Text>
                   <Box>
-                    <Text as="b" marginTop="10px" fontSize="18px">Price :${e.data.rate}</Text>
+                    <Text as="b" marginTop="10px" fontSize="18px">Price :${e.productId.rate}</Text>
                   </Box>
                   <Box className={style.on}>
-                    <CgRemove fontSize="20px" onClick={()=>{handleDelete(e.id)}} />
+                    <CgRemove fontSize="20px" onClick={()=>{handleDelete(e.productId._id)}} />
                   </Box>
                   <Box className={style.discount}>
-                    <Text as="mark" fontSize="18px">Discount :${e.data.discount}</Text>
+                    <Text as="mark" fontSize="18px">Discount :${e.productId.discount}</Text>
                   </Box>
                   <Box marginTop="20px">
                     <ButtonGroup gap={5}>
-                      <Button disabled={e.qty === 1} onClick={()=>{handlePatch(e.id , e.qty,-1)}}>-</Button>
-                      <Button>{e.qty}</Button>
-                      <Button onClick={()=>{handlePatch(e.id , e.qty,1) }}>+</Button>
+                      <Button disabled={e.productId.qty === 1} onClick={()=>{handlePatch(e.productId._id , e.productId.qty,-1)}}>-</Button>
+                      <Button>{e.productId.qty}</Button>
+                      <Button onClick={()=>{handlePatch(e.productId_id , e.productId.qty,1) }}>+</Button>
                     </ButtonGroup>
                   </Box>
                   <Box marginTop="20px" className={style.off}>

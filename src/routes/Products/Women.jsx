@@ -25,7 +25,7 @@ const Women = () => {
       page:page
     }).then((res)=>{
       
-      setProducts(res.data)
+      setProducts(res.data.data)
       setIsLoading(false)
     }).catch((err)=>{
       console.log(err);
@@ -38,8 +38,9 @@ const Women = () => {
       setPage(value)
   }
   const handlepropSort=(value)=>{
-    setProducts([...value])
-    setSearchParams({query:"sorting"})
+    console.log(value,"value")
+    setProducts(value)
+    // setSearchParams({query:"sorting"})
   }
 
   return (

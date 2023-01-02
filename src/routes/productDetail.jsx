@@ -9,25 +9,30 @@ import {
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { addToCart, addToWishList, getProductsWithID } from '../api/api'
+import { addToCart, addToWishList, getProductsWithID, getuser } from '../api/api'
 import Dropdown from '../component/droDownNav/Dropdown'
 import Footer from '../component/footer/footer'
 import TransitionExample from '../component/modals/modalcart'
 import Navbar from '../component/navbar/Navbar'
+import Loading from '../component/productsDisplay/loading'
+
+
 
 
 const ProductDetail = () => {
   const toast = useToast()
-
+  let token = localStorage.getItem("asos-token") || null
   const { name ,id } = useParams();
   // console.log(name,id)
   const [productDetail, setProductDetail] = useState({})
   const [clicked , setClicked] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   const getData = () => {
-    getProductsWithID(name , id).then((res) => {
-      console.log(res.data)
-      setProductDetail({ ...res.data })
+    getProductsWithID(id).then((res) => {
+      setLoading(true)
+      setProductDetail({ ...res.data.data })
+      setLoading(false)
     }).catch((err) => {
       console.log(err)
     })
@@ -38,22 +43,24 @@ const ProductDetail = () => {
   }, [])
 
 
-  const handleCart=()=>{
-    addToCart(productDetail).then((res)=>{
-      console.log(res);
-      toast({
-        title: `Item Added To Cart`,
-        position: `top-right`,
-        isClosable: true,
-        duration: 3000
+  const handleCart=(id)=>{
+    getuser(token).then((res)=>{
+      addToCart(id,res.data.id).then((response)=>{
+        console.log(response);
+        toast({
+          title: `Item Added To Cart`,
+          position: `top-right`,
+          isClosable: true,
+          duration: 3000
+        })
+      }).catch((err)=>{
+        console.log(err)
       })
-    }).catch((err)=>{
-      console.log(err)
     })
+
 
   }
   useEffect(() => {
-    // 👇️ scroll to top on page load
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   }, []);
 
@@ -70,12 +77,12 @@ const ProductDetail = () => {
   }
 
 
-  console.log(productDetail)
+  // console.log(productDetail)
   return (
     <div>
       <Navbar />
       <Dropdown />
-      <SimpleGrid w="80%" margin="auto" columns={[1, 1, 2]} justifyContent="center">
+      {loading == true ? <Loading/>:<SimpleGrid w="80%" margin="auto" columns={[1, 1, 2]} justifyContent="center">
         <Box marginTop="20px" w="90%">
           <Image src={productDetail.img} w="100%" h="90%" />
         </Box>
@@ -92,13 +99,13 @@ const ProductDetail = () => {
             <Text as="i" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum repellat, earum deserunt corrupti deleniti cupiditate dolorem illum! Sed temporibus vel culpa distinctio ipsum cupiditate commodi saepe, aliquid, nesciunt, sapiente pariatur?</Text>
           </Box>
           <Box marginTop="30px">
-            <Button bg="#018849" color="white" w="50%" onClick={handleCart}>Add To Cart</Button>
+            <Button bg="#018849" color="white" w="50%" onClick={()=>{handleCart(productDetail._id)}}>Add To Cart</Button>
           </Box>
           <Box marginTop="30px">
             <Button bg="#018849" color="white" w="50%" onClick={handleWishlist}>Add To WishList</Button>
           </Box>
         </Box>
-      </SimpleGrid>
+      </SimpleGrid>}
       <Box>
         <Accordion allowToggle>
           <AccordionItem>

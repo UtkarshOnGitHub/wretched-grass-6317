@@ -15,9 +15,11 @@ import {
     InputGroup,
     useToast,
     InputRightElement,
+    Text,
   } from '@chakra-ui/react'
 
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Createuser } from '../../api/api'
 import { AppContext } from '../../context/AuthContextProvider'
 
@@ -117,8 +119,9 @@ export function DrawerExample({login , setLogin}) {
                             </InputRightElement>
                         </InputGroup>
                     </FormControl>
+                    <Link to="/signup"><Text marginTop={"50px"} textAlign={"center"} color="blue">Not Have Any Account ?</Text></Link>
             </DrawerBody>
-  
+
             <DrawerFooter>
               <Button variant='outline' mr={3} onClick={handleClose}>
                 Cancel

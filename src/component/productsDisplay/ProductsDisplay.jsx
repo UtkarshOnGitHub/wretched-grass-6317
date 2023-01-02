@@ -9,9 +9,9 @@ const ProductsDisplay = ({data}) => {
   return (
         <div style={{display:"flex" , justifyContent:"center", marginTop:"20px"}}>
             <SimpleGrid columns={[1,2,3,4]} gap={10}>
-                {data.map((e)=>{
+                {data?.map((e)=>{
                     return(
-                        <Link to={`/${e.name}/${e.id}`}><Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={e.id}>
+                        <Link to={`/${e.name}/${e._id}`}><Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' key={e.id}>
                         <Image src={e.img}/>
                 
                         <Box p='6' >

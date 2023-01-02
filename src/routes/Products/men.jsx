@@ -23,8 +23,7 @@ const Men = () => {
         limit:16,
         page:page
       }).then((res)=>{
-        
-        setProducts(res.data)
+        setProducts(res.data.data)
         setIsLoading(false)
       }).catch((err)=>{
         console.log(err);
@@ -36,13 +35,13 @@ const Men = () => {
       getData()
     },[page])
   
-    console.log(isLoading)
+    console.log(products)
     const handleSetPage=(value)=>{
         setPage(value)
     }
     const handlepropSort=(value)=>{
       setProducts([...value])
-      // setSearchParams({query:"sorting"})
+      setSearchParams({query:"sorting"})
     }
   return (
     <div>
