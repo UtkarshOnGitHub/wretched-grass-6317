@@ -17,6 +17,7 @@ import style from "./cart.module.css"
 import { CgRemove } from "react-icons/cg"
 import TransitionExample from '../../component/modals/modalcart'
 import { SizeExample } from '../checkout'
+import Loading from '../../component/productsDisplay/loading'
 
 
 
@@ -26,13 +27,16 @@ const Cart = () => {
   const [total ,setTotal] = useState(0)
   const [state , setState] = useState(false)
   let token = localStorage.getItem("asos-token") || null
+  const [loading ,setLoading] = useState(false)
   const getData = () => {
     console.log(token)
     getuser(token).then((response)=>{
+      setLoading(true)
       console.log(response.data.id)
       getCart(response.data.id).then((res) => {
         console.log(res.data)
         setCartItem(res.data)
+        setLoading(false)
       }).catch((err) => {
         console.log(err)
       })
@@ -49,6 +53,7 @@ const Cart = () => {
     setTotal(total1)
   },[cartItem])
 
+  
 
   useEffect(() => {
     getData()
@@ -71,7 +76,20 @@ const Cart = () => {
         getData()
     })
   }
-  if(cartItem.length===0){
+
+
+  if(loading){
+    return(
+      <>
+      <Navbar/>
+      <Dropdown/>
+      <Loading/>
+      <Footer/>
+      </>
+    )
+  }
+
+  if(cartItem.length===0 && loading!=true){
     return(
       <div>
       <Navbar />
@@ -83,6 +101,7 @@ const Cart = () => {
       </div>
     )
   }
+
   return (
     <div>
       <Navbar />
