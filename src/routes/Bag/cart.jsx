@@ -104,25 +104,27 @@ const Cart = () => {
     )
   }
 
-  if(cartItem.length===0 && loading!=true){
-    return(
-      <div>
-      <Navbar />
-      <Dropdown />
-      <Box display="flex" justifyContent="center" w="100%" margin="auto">
-        <Image src="https://careerindex.co.in/assets/images/emptycart.png"/>
-      </Box>
-      <Footer/>
-      </div>
-    )
-  }
+  // if(cartItem.length===0 && loading!=true){
+  //   return(
+  //     <div>
+  //     <Navbar />
+  //     <Dropdown />
+  //     <Box display="flex" justifyContent="center" w="100%" margin="auto">
+  //       <Image src="https://careerindex.co.in/assets/images/emptycart.png"/>
+  //     </Box>
+  //     <Footer/>
+  //     </div>
+  //   )
+  // }
 
   return (
     <div>
       <Navbar />
       <Dropdown />
       <div>
-        <SimpleGrid>
+        {cartItem.length==0 ?    <Box display="flex" justifyContent="center" w="100%" margin="auto">
+        <Image src="https://careerindex.co.in/assets/images/emptycart.png"/>
+      </Box> :<SimpleGrid>
           <Box className={style.box2}>
             <Text fontSize="3xl">Total Amount</Text>
             <TableContainer className={style.table}>
@@ -144,7 +146,7 @@ const Cart = () => {
                 </Tfoot>
               </Table>
             </TableContainer>
-            <Button marginTop="10px" onClick={()=>{setState(true)}}>Proceed To Checkout</Button>
+            <Button marginTop="10px" marginBottom={"20px"} onClick={()=>{setState(true)}}>Proceed To Checkout</Button>
           </Box>
           <Box className={style.pay}>
             <Text as="mark" fontSize="2xl">Your Total Amount Is ${cartItem.length==0 ? 0.00 : total+60}</Text><br/>
@@ -184,7 +186,7 @@ const Cart = () => {
             )
           })}
 
-        </SimpleGrid>
+        </SimpleGrid>}
       </div>
       <SizeExample state={state} setState={setState}/>
       <Footer />
