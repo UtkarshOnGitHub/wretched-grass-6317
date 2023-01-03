@@ -62,22 +62,31 @@ export function DrawerExample({login , setLogin}) {
     const handleSubmit = (e) => {
         e.preventDefault()
         Createuser(formData).then((res) => {
-            console.log(res)
-            toast({
-                title: 'LogIn SuccessFull.',
-                description: `${name} Welcome Back!`,
-                status: 'success',
-                duration: 9000,
-                isClosable: true,
-            })
-            setIsAuth(true)
-            // setClose(false)
-        }).catch((err) => {
-            console.log(err)
-        })
+          console.log(res.data)
+          if(res.data=="Invalid Credential"){
+              toast({
+                  title: 'Invalid Credential.',
+                  description: `PLease Provide Valid Information`,
+                  status: 'error',
+                  duration: 5000,
+                  isClosable: true,
+              })  
+          }else{
+              toast({
+                  title: 'LogIn SuccessFull.',
+                  description: `${name} Welcome Back!`,
+                  status: 'success',
+                  duration: 9000,
+                  isClosable: true,
+              })
+              localStorage.setItem("asos-token",res.data.token)
+              setIsAuth(true)
+              setProfileName(formData.name)
+          }
+      }).catch((err) => {
+          console.log(err)
+      })
     }
-
-
 
 
 

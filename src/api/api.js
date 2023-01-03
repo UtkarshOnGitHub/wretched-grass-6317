@@ -50,14 +50,12 @@ export const addToCart =(productId,userId)=>{
     })
 }
 export const delFromCart =(id)=>{
-    return axios.delete(`https://server-production-dfc6.up.railway.app/cart/${id}`)
+    return axios.delete(`https://nice-tick-yoke.cyclic.app/cart/${id}`)
 
 }
 
-export const countCart =(id,qty,value)=>{
-    return axios.patch(`https://server-production-dfc6.up.railway.app/cart/${id}`,{
-        qty:qty+value
-    })
+export const countCart =(data={})=>{
+    return axios.post(`https://nice-tick-yoke.cyclic.app/cart/qty`,data)
 
 }
 export const getWishList =()=>{
@@ -82,7 +80,7 @@ export const Signuser =(data={})=>{
 }
 
 export const getuser =(token)=>{
-    console.log(token)
+    // console.log(token)
     return axios.post(`https://nice-tick-yoke.cyclic.app/user/getuser`, {token:token})
 }
 

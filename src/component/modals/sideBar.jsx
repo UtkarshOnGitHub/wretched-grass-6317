@@ -41,14 +41,14 @@ function DrawerExample({clicked , setClicked}) {
             
   
             <DrawerBody >
-                <Link to="/women">
+                <Link to="/women_products">
                 <Flex bg="#f5f5f3" padding="10px" alignItems="center" borderRadius="10px" marginTop="20px">
                     <Text as="b" fontSize="2xl">Women</Text>
                     <Spacer/>
                     <FaShopify fontSize="20px"/>
                 </Flex>
                 </Link>
-                <Link to="/men">
+                <Link to="/men_products">
                 <Flex bg="#f5f5f3" padding="10px" alignItems="center" borderRadius="10px" marginTop="20px">
                     <Text as="b" fontSize="2xl">Men</Text>
                     <Spacer/>
