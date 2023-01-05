@@ -1,4 +1,4 @@
-import { Flex, Box, Img, Text, Input, Avatar, Menu, MenuButton, MenuList, MenuGroup, MenuItem, MenuDivider } from "@chakra-ui/react";
+import { Flex, Box, Img, Text, Input, Avatar, Menu, MenuButton, MenuList, MenuGroup, MenuItem, MenuDivider, Toast, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
 import navStyles from "./navbar.module.css";
 import { MdOutlineAccountCircle } from "react-icons/md";
@@ -10,13 +10,15 @@ import DrawerExample from "../modals/sideBar";
 import { useContext } from "react";
 import { AppContext } from "../../context/AuthContextProvider";
 import { useEffect } from "react";
-import { getuser } from "../../api/api";
+import { getadmin, getuser } from "../../api/api";
 
 const Navbar = () => {
     const [clicked, setClicked] = useState(false);
     const [email,setEmail] = useState("")
+    const [approve , setApprove] = useState(false)
     const redirect = useNavigate()
     const { profileModal, setProfileModal, profileName } = useContext(AppContext);
+    const toast = useToast()
     const handleProfileModal = () => {
     setProfileModal(true);
   };
@@ -27,10 +29,32 @@ const Navbar = () => {
         setEmail(res.data.email)
     })
   })
+  useEffect(()=>{
+    getadmin(token).then((res)=>{
+        console.log(res)
+        if(res.data=="approved"){
+            setApprove(true)
+        }else{
+            setApprove(false)
+        }
+    })
+},[])
 
   const handleLogOut=()=>{
     localStorage.removeItem("asos-token")
     window.location.reload()
+  }
+  const checkAdmin =()=>{
+    if(approve==true){
+        redirect("/admin")
+    }else{
+        toast({
+            title: "You Are Not Admin",
+            status: 'error',
+            duration: 5000,
+            isClosable: true,
+        })
+    }
   }
   return (
     <div
@@ -116,7 +140,7 @@ const Navbar = () => {
               <MenuList fontSize={"17px"}>
                 <MenuGroup title="Profile">
                   <Link to="/profile"><MenuItem>My Account</MenuItem></Link>
-                  <MenuItem>Admin Panel </MenuItem>
+                  <MenuItem onClick={checkAdmin}>Admin Panel</MenuItem>
                 </MenuGroup>
                 <MenuDivider />
                 <MenuGroup>

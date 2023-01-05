@@ -80,8 +80,10 @@ export const Signuser =(data={})=>{
 }
 
 export const getuser =(token)=>{
-    console.log(token)
     return axios.post(`https://nice-tick-yoke.cyclic.app/user/getuser`, {token:token})
+}
+export const getadmin =(token)=>{
+    return axios.post(`https://nice-tick-yoke.cyclic.app/user/admin`, {token:token})
 }
 
 

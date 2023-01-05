@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Admin from '../component/Admin'
 import ListPages from '../component/productsDisplay/listPages'
 import SignUpAcc from '../component/signup/SignUpAcc'
 import Cart from './Bag/cart'
@@ -51,6 +52,11 @@ const Allroutes = () => {
                 <Profile/>
               </PrivateRoutes>
             }>
+            </Route>
+            <Route path="/admin" element={
+              <PrivateRoutes><Admin/></PrivateRoutes>
+            }>
+
             </Route>
         </Routes>
   )
