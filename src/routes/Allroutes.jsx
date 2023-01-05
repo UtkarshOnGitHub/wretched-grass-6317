@@ -9,6 +9,7 @@ import PrivateRoutes from './PrivateRoutes'
 import ProductDetail from './productDetail'
 import Men from './Products/men'
 import Women from './Products/Women'
+import Profile from './Profile'
 
 
 let auth = localStorage.getItem("asos-token") || null;
@@ -40,11 +41,17 @@ const Allroutes = () => {
             <Cart/>
             </PrivateRoutes>
             }></Route>
-            <Route path="/wishlist" element={
+            {/* <Route path="/wishlist" element={
               <PrivateRoutes>
             <Wishlist/>
             </PrivateRoutes>
-            }></Route>
+            }></Route> */}
+            <Route path="/profile" element={
+              <PrivateRoutes>
+                <Profile/>
+              </PrivateRoutes>
+            }>
+            </Route>
         </Routes>
   )
 }
